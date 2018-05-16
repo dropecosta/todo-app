@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Axios from 'axios'
+import axios from 'axios'
 
 import PageHeader from '../template/pageHeader'
 import TodoForm from './todoForm'
@@ -22,6 +22,9 @@ export default class Todo extends Component {
     }
 
     handleAdd() {
+        const description = this.state.description
+        axios.post(URL, { description })
+        .then(resp => console.log('funcionou!'))
         
     }
 
